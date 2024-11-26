@@ -1,7 +1,7 @@
 # CS4083-NLP
 
 ## Description
-This repository contains assignments, labs, and projects for the CS4083 - Text Mining and NLP course.
+This repository contains assignments and labs for the CS4083 - Text Mining and NLP course.
 
 ## Assignments
 
