@@ -13,6 +13,9 @@ This repository contains assignments and labs for the CS4083 - Text Mining and N
 
 #### [`Assignment_1`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/Assignment_1.ipynb).
 
+
+### Assignment 0 [`Assignment_0`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/assignment_0.ipynb).
+
 ---
 
 ## Labs
