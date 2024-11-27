@@ -32,6 +32,10 @@ This repository contains assignments and labs for the CS4083 - Text Mining and N
 
 #### [`Evaluate Topic Models`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Evaluate_Topic_Models.ipynb).
 
+### Lab 6
+#### [`Generative AI Use Case: Summarize Dialogue`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_6_summarize_dialogue.ipynb).
+
+
 
 
 
