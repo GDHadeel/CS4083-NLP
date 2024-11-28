@@ -26,11 +26,11 @@ import numpy as np
 File Type: Jupyter Notebook (**`.ipynb`**) or Python script (**`.py`**).
 
 #### Key Concepts Covered
-1- Array Creation: **`np.array()`**, **`np.zeros()`**, **`np.ones()`**, etc.
-2- Array Operations: Indexing, slicing, reshaping, and sorting.
-3- Basic Array Operations: Addition, subtraction, and other mathematical functions.
-4- Random Numbers: Generating random arrays using **`np.random`**.
-5- Array Statistics: Using **`.sum()`**, **`.min()`**, **`.max()`**, etc.
+1. Array Creation: **`np.array()`**, **`np.zeros()`**, **`np.ones()`**, etc.
+2. Array Operations: Indexing, slicing, reshaping, and sorting.
+3. Basic Array Operations: Addition, subtraction, and other mathematical functions.
+4. Random Numbers: Generating random arrays using **`np.random`**.
+5. Array Statistics: Using **`.sum()`**, **`.min()`**, **`.max()`**, etc.
 
 
 
