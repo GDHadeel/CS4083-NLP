@@ -8,7 +8,7 @@ This repository contains assignments and labs for the CS4083 - Text Mining and N
 ### [`Assignment_0`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/assignment_0.ipynb): NumPy Basics
 This assignment helps you revise the basics of NumPy, focusing on array creation, manipulation, and basic operations.
 
-#### Goal
+#### Goals
 - Create and manipulate arrays.
 - Perform basic operations like sorting, indexing, and reshaping.
 - Use essential NumPy functions.
@@ -37,7 +37,7 @@ import numpy as np
 ### [`Assignment_1`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/Assignment_1.ipynb): 10 Minutes to Pandas
 This assignment introduces you to basic Pandas operations for data manipulation and analysis.
 
-#### Goal
+#### Goals
 - Learn how to create and manipulate Pandas objects (Series and DataFrames).
 - Understand how to select, filter, and apply operations to data.
 
@@ -82,8 +82,24 @@ Using aggregation functions (**`mean()`**, **`sum()`**) and transformations.
 
 ## B- Labs
 
-### Lab 1
-#### [`Data analysis with pandas`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Data%20analysis%20with%20pandas.ipynb).
+### [`Lab 1`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Data%20analysis%20with%20pandas.ipynb): Data Analysis with Pandas
+This lab focuses on data cleaning and exploratory data analysis (EDA) using the pandas library. The dataset contains information about approximately 6,000 books from Goodreads, including details like book ratings, review counts, and genres. The objective is to clean the data, parse and transform it, and perform basic EDA.
+
+#### Goals
+- Load and clean datasets with missing values.
+- Parse and transform data columns.
+- Group data by specific features and perform aggregation.
+
+#### Loading and Cleaning with Pandas
+The first step is loading the **`goodreads.csv`** dataset and cleaning it. This includes:
+
+- Checking for missing values and handling them (e.g., removing or filling missing data).
+- Ensuring each column has the correct data type.
+- Parsing columns like **`author_url`** and **`genre_urls`** to extract more useful information.
+
+##### Cleaning Steps:
+
+
 
 ### Lab 2
 #### [`Text Data Preprocessing (NLP pipline)`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab2NLPpipeline.ipynb).
