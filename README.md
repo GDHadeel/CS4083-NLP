@@ -31,7 +31,7 @@ import numpy as np
 ---
 ### [`Assignment_1`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/Assignment_1.ipynb): 10 Minutes to Pandas
 This assignment introduces you to basic Pandas operations for data manipulation and analysis.
----
+
 #### Goals
 - Learn how to create and manipulate Pandas objects (Series and DataFrames).
 - Understand how to select, filter, and apply operations to data.
