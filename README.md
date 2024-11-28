@@ -130,8 +130,7 @@ Group data by author or year and calculate aggregates (e.g., average rating).
      dfgb_author['author'].count()
   ```
 
-##### Dataset
-[`goodreads`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/goodreads.csv):
+##### Dataset: [`goodreads`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/goodreads.csv)
 
 
 
