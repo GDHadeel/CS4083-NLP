@@ -2,7 +2,7 @@
 
 ## Description
 This repository contains assignments and labs for the CS4083 - Text Mining and NLP course.
-
+---
 ## A- Assignments
 ---
 ### [`Assignment_0`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/assignment_0.ipynb): NumPy Basics
