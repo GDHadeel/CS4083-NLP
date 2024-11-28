@@ -37,19 +37,15 @@ This assignment introduces you to basic Pandas operations for data manipulation 
 - Understand how to select, filter, and apply operations to data.
 
 
-#### Submission Format
-Notebook: **`.ipynb`** format or Python script **`.py`**
+#### Requirements
+- Pandas
+- Numpy
+- Jupyter Notebook or Python IDE
 
 To import Pandas, use:
 ```
 import pandas as pd
 ```
-
-#### Requirements
-- Python 3.x
-- Pandas
-- Numpy
-- Jupyter Notebook or Python IDE
 
 #### Key Concepts Covered
 1. Creating Pandas Objects:
