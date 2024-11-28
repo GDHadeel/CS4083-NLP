@@ -34,7 +34,7 @@ import numpy as np
 5. **Array Statistics:** Using **`.sum()`**, **`.min()`**, **`.max()`**, etc.
 
 
-#### [`Assignment_1`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/Assignment_1.ipynb): 10 Minutes to Pandas
+### [`Assignment_1`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/Assignment_1.ipynb): 10 Minutes to Pandas
 This assignment introduces you to basic Pandas operations for data manipulation and analysis.
 
 #### Goal
