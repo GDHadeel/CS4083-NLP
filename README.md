@@ -279,16 +279,16 @@ t-SNE plots to visualize word embeddings and the semantic relationships between 
 
 
 
-### Lab 5
-#### [`Topic Modeling Using LDA`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Introduction_to_Topic_Modeling.ipynb)
+
+#### [`Lab5.A`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Introduction_to_Topic_Modeling.ipynb)
 
 
 
-#### [`Topic Modeling with BERTopic`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Topic_Modeling_with_BERTopic.ipynb).
+#### [`Lab5.B`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Topic_Modeling_with_BERTopic.ipynb).
 
 
 
-#### [`Evaluate Topic Models`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Evaluate_Topic_Models.ipynb).
+#### [`Lab5.C`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Evaluate_Topic_Models.ipynb).
 
 
  
