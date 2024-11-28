@@ -6,12 +6,12 @@ This repository contains assignments and labs for the CS4083 - Text Mining and N
 ## A- Assignments
 
 ### [`Assignment_0`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/assignment_0.ipynb): NumPy Basics
-This assignment is designed to help you revise the basic concepts of NumPy, including array creation, manipulation, and fundamental operations.
+This assignment helps you revise the basics of NumPy, focusing on array creation, manipulation, and basic operations.
 
 #### Goal
-- Creating and manipulating arrays
-- Performing basic operations like sorting, indexing, and reshaping
-- Using essential NumPy functions
+- Create and manipulate arrays.
+- Perform basic operations like sorting, indexing, and reshaping.
+- Use essential NumPy functions.
 
 #### Submission Format
 - **`NumPy`**: The main library used for array operations.
@@ -23,14 +23,15 @@ import numpy as np
 ```
 
 #### Requirements
-File Type: Jupyter Notebook (**`.ipynb`**) or Python script (**`.py`**).
-
+- Python 3.x
+- Numpy
+  
 #### Key Concepts Covered
-1. Array Creation: **`np.array()`**, **`np.zeros()`**, **`np.ones()`**, etc.
-2. Array Operations: Indexing, slicing, reshaping, and sorting.
-3. Basic Array Operations: Addition, subtraction, and other mathematical functions.
-4. Random Numbers: Generating random arrays using **`np.random`**.
-5. Array Statistics: Using **`.sum()`**, **`.min()`**, **`.max()`**, etc.
+1. **Array Creation:** **`np.array()`**, **`np.zeros()`**, **`np.ones()`**, etc.
+2. **Array Operations:** Indexing, slicing, reshaping, and sorting.
+3. **Basic Array Operations:** Addition, subtraction, and other mathematical functions.
+4. **Random Numbers:** Generating random arrays using **`np.random`**.
+5. **Array Statistics:** Using **`.sum()`**, **`.min()`**, **`.max()`**, etc.
 
 
 
