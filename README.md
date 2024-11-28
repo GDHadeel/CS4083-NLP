@@ -79,7 +79,7 @@ Sorting data by index and values using **`sort_index()`** and **`sort_values()`*
 Using aggregation functions (**`mean()`**, **`sum()`**) and transformations.
 
 ---
-
+---
 ## B- Labs
 
 ### [`Lab 1`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Data%20analysis%20with%20pandas.ipynb): Data Analysis with Pandas
@@ -468,29 +468,136 @@ lda_model = gensim.models.LdaMulticore(corpus=corpus, id2word=id2word, num_topic
 pprint(lda_model.print_topics())
 ```
 
+#### [`Lab5.B`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Topic_Modeling_with_BERTopic.ipynb): Topic Modeling with BERTopic
+
+In this lab, we explore BERTopic, a deep learning-based approach for topic modeling. Topic modeling is the process of discovering themes within a large collection of text documents, similar to organizing a bookstore by book topics. The BERTopic model uses BERT embeddings, clustering, and TF-IDF to find and represent topics in text data.
+
+#### Goals
+- Understand how BERTopic works for extracting topics from a set of documents.
+- Implement BERTopic on a dataset of 20 newsgroup articles.
+- Evaluate and visualize the discovered topics.
+- Analyze the performance of BERTopic in comparison to traditional methods like LDA.
+
+#### Approach
+1. **Document Embeddings:** We convert the text data into numerical representations using BERT embeddings.
+2. **Dimensionality Reduction:** We apply UMAP to reduce the dimensions of the embeddings for efficient clustering.
+3. **Clustering:** We use HDBSCAN for clustering the reduced embeddings into topics.
+4. **TF-IDF:** Class-based TF-IDF is used to extract the most relevant words for each topic.
+5- **Topic Visualization:** We visualize the topics and evaluate their coherence.
+
+#### Steps
+
+###### 1. Install Required Libraries:
+```
+pip install bertopic
+```
+
+###### 2.Preprocessing:
+- Load and clean the dataset.
+- Tokenize and lemmatize the text to prepare it for modeling.
+
+###### 3.Topic Modeling:
+- Extract document embeddings using the SentenceTransformer.
+- Reduce dimensions using UMAP.
+- Cluster the embeddings with HDBSCAN.
+- Use TF-IDF to refine topic-word distributions.
+
+###### 4.Evaluation:
+- Visualize topics using interactive plots.
+- Evaluate topic coherence with different measures.
+
+#### Requirements
+Libraries: **`bertopic`**, **`sentence-transformers`**, **`umap`**, **`hdbscan`**, **`nltk`**, **`pandas`**, **`gensim`**, **`sklearn`**, etc.
 
 
 
+#### [`Lab5.C`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Evaluate_Topic_Models.ipynb): Evaluate Topic Models
+In this lab, we explore Latent Dirichlet Allocation (LDA) for topic modeling using Python and Gensim. The main objective is to evaluate topic models through topic coherence and optimize LDA parameters. We use a dataset of NeurIPS (NIPS) conference papers published from 1987 to 2016.
 
+#### Goals
+- Understand and evaluate topic models using coherence metrics.
+- Implement LDA topic modeling on a text dataset (NeurIPS papers).
+- Optimize the LDA model by tuning hyperparameters (e.g., number of topics, alpha, and beta).
+- Visualize the results using pyLDAvis.
 
+#### Requirements
+- **`Gensim`**
+- **`Pandas`**
+- **`NITK`**
+- **`Spacy`**
 
+To install the required libraries, run:
+```
+pip install gensim pandas nltk spacy
+```
+  
+#### Steps
+1. **Loading Data:** Load a dataset (e.g., NeurIPS conference papers) to perform topic modeling.
+2. **Data Cleaning:** Preprocess the text by removing punctuation, converting text to lowercase, and tokenizing.
+3. **Phrase Modeling: **Create bigrams and trigrams using Gensim's **`Phrases`** model to improve topic representation.
+4. **Data Transformation:** Create a dictionary and corpus for the LDA model.
+5. **Base Model:** Train the base LDA model using the corpus and dictionary.
+6. **Hyper-parameter Tuning:** Fine-tune the model's parameters for better topic coherence.
+7. **Evaluation:** Use topic coherence measures to evaluate the model.
+8. **Visualization:** Visualize the topics and their coherence.
 
+#### Example Code 
+```python
+import gensim
+import pandas as pd
+import re
+from nltk.corpus import stopwords
+import spacy
 
+# Data loading and cleaning
+papers = pd.read_csv('papers.csv')
+papers['paper_text_processed'] = papers['paper_text'].map(lambda x: re.sub('[,\.!?]', '', x).lower())
 
+# Tokenization
+def sent_to_words(sentences):
+    for sentence in sentences:
+        yield gensim.utils.simple_preprocess(str(sentence), deacc=True)
 
+data_words = list(sent_to_words(papers['paper_text_processed'].values.tolist()))
 
+# Bigrams and trigrams
+bigram = gensim.models.Phrases(data_words, min_count=5, threshold=100)
+bigram_mod = gensim.models.phrases.Phraser(bigram)
+```
 
+#### Running the Model
+Once you've preprocessed the data, you can train the LDA model using Gensim:
+```python
+from gensim import corpora
+from gensim.models import LdaModel
 
-#### [`Lab5.B`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Topic_Modeling_with_BERTopic.ipynb).
+# Create Dictionary and Corpus
+id2word = corpora.Dictionary(data_words)
+corpus = [id2word.doc2bow(text) for text in data_words]
 
+# Train LDA Model
+lda_model = LdaModel(corpus, num_topics=5, id2word=id2word, passes=15)
 
+# Print Topics
+topics = lda_model.print_topics(num_words=5)
+for topic in topics:
+    print(topic)
+```
 
-#### [`Lab5.C`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Evaluate_Topic_Models.ipynb).
+#### Evaluation Metrics
+We evaluate the model using coherence measures such as **`C_v`** and **`C_p`**. You can visualize the coherence scores to choose the best model.
+```python
+from gensim.models import CoherenceModel
 
+# Coherence Evaluation
+coherence_model_lda = CoherenceModel(model=lda_model, texts=data_words, dictionary=id2word, coherence='c_v')
+coherence_lda = coherence_model_lda.get_coherence()
+print(f'Coherence Score: {coherence_lda}')
+```
 
- 
-### Lab 6
-#### [`Generative AI Use Case: Summarize Dialogue`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_6_summarize_dialogue.ipynb).
+---
+#### [`Lab 6`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_6_summarize_dialogue.ipynb): 
+
 
 
 
