@@ -272,11 +272,104 @@ t-SNE plots to visualize word embeddings and the semantic relationships between 
   - Apply and visualize word embeddings using t-SNE.
 4. Evaluate and compare the different word embedding techniques based on their visualizations and effectiveness.
 
-##### Dataset: [`reviews_train`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_train.csv), [`reviews_test`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_test.csv)
 
 
 ### [`Lab 4`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_4_Sentiment_Analysis.ipynb): Sentiment Analysis
+This lab focuses on understanding the difference between data-centric and model-centric approaches in machine learning. It demonstrates how improving the data can lead to better performance than just tuning models and hyperparameters.
+#### Goals
+- Build a text classifier for product reviews (magazines).
+- Compare the performance of different models.
+- Investigate the importance of cleaning the data to improve model accuracy.
+- Explore ways to enhance model performance by focusing on data quality.
 
+#### Dataset [`reviews_train`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_train.csv), [`reviews_test`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_test.csv)
+The dataset contains product reviews labeled as either "good" or "bad." Each review has an associated label:
+- Good Review: ⭐️⭐️⭐️⭐️⭐️
+- Bad Review: ⭐️
+- 
+  - Example reviews:
+    - Excellent! I look forward to every issue. I had no idea just how much I didn't know. (Label: ⭐️⭐️⭐️⭐️⭐️)
+    - It took 6 weeks to get delivered, and he was so disappointed when it finally arrived. (Label: ⭐️)
+
+#### Installation
+To run this lab, you'll need to install the required libraries. You can install them using the following command:
+  ```
+pip install scikit-learn pandas
+  ```
+#### Steps
+
+###### 1. Loading the Data
+First, load the training and test datasets:
+  ```python
+     import pandas as pd
+     train = pd.read_csv('reviews_train.csv')
+     test = pd.read_csv('reviews_test.csv')
+
+     test.sample(5)
+  ```
+
+###### 2. Training a Baseline Model
+We use the TF-IDF representation of the text and train an SVM model with SGD. The following code sets up a simple pipeline:
+  ```python
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.linear_model import SGDClassifier
+from sklearn.pipeline import Pipeline
+
+sgd_clf = Pipeline([
+    ('vect', CountVectorizer()),
+    ('tfidf', TfidfTransformer()),
+    ('clf', SGDClassifier())
+])
+
+sgd_clf.fit(train['review'], train['label'])
+```
+
+###### 3. Evaluating the Model
+After training, evaluate the accuracy of the model:
+  ```python
+from sklearn import metrics
+
+def evaluate(clf):
+    pred = clf.predict(test['review'])
+    acc = metrics.accuracy_score(test['label'], pred)
+    print(f'Accuracy: {100*acc:.1f}%')
+
+evaluate(sgd_clf)
+  ```
+
+###### 4. Trying Another Model
+Experiment with different models to improve accuracy. You can try:
+
+- Naive Bayes Classifier for comparison.
+- Hyperparameter tuning with grid search.
+- Ensemble methods for combining multiple models.
+  
+###### 5. Data Inspection
+Look at the data to identify any issues. For example, you may notice:
+
+- Mislabeling (e.g., negative reviews labeled as "good").
+- HTML tags or noisy text.
+ ```
+train.head()
+```
+
+###### 6. Cleaning the Data
+Clean the data by removing examples with issues, such as HTML tags. Create a simple heuristic to filter out bad data:
+  ```python
+def is_bad_data(review: str) -> bool:
+    # Detect bad data (e.g., containing HTML tags)
+    return False
+
+train_clean = train[~train['review'].map(is_bad_data)]
+  ```
+
+###### 7. Re-training on Cleaned Data
+Train a model using the cleaned dataset and evaluate its performance:
+  ```python
+sgd_clf_clean = clone(sgd_clf)
+sgd_clf_clean.fit(train_clean['review'], train_clean['label'])
+evaluate(sgd_clf_clean)
+  ```
 
 
 
