@@ -5,7 +5,7 @@ This repository contains assignments and labs for the CS4083 - Text Mining and N
 
 ## Assignments
 
-### #### [`Assignment_0`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/assignment_0.ipynb): NumPy Basics
+### [`Assignment_0`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/assignment_0.ipynb): NumPy Basics
 Overview
 This assignment is designed to help you revise the basic concepts of NumPy, including array creation, manipulation, and fundamental operations.
 
