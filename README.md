@@ -137,12 +137,12 @@ Group data by author or year and calculate aggregates (e.g., average rating).
 ### [`Lab 2`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Data%20analysis%20with%20pandas.ipynb): Text Data Preprocessing (NLP pipline)
 In this lab, we explore how to preprocess tweets for sentiment analysis using the NLTK package. By the end of the lab, you will understand how to build an NLP pipeline to process and analyze Twitter datasets.
 
-#### Setup
+#### Goals 
 1. Load and explore a Twitter dataset.
 2. Perform basic text preprocessing tasks.
 3. Use techniques like Bag of Words and TF-IDF to represent text.
 
-#### Goals
+#### Setup
 To get started, we will use the NLTK package and the sample Twitter dataset included in it. The dataset consists of 5000 positive and 5000 negative tweets.
 
 To install the necessary libraries, run:
@@ -198,7 +198,6 @@ tokens_stemmed = [stemmer.stem(word) for word in tokens_clean]
 print(tokens_stemmed)
   ```
 
-
 #### 3. Data Representation (Vectorization)
 We use vectorization to convert text into numerical data. We can use techniques like Bag of Words (BoW) and TF-IDF.
 
@@ -219,30 +218,45 @@ We use vectorization to convert text into numerical data. We can use techniques 
   ```
 
 
-### Lab 3
-#### [`Regex & ArabicNLP Embedding`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab3_Word_Embedding.ipynb).
+
+### [`Lab 3`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab3_Word_Embedding.ipynb): Regex & ArabicNLP Embedding
+This lab introduces Natural Language Processing (NLP) techniques, including Regex for text processing and various Word Embedding methods. Students will explore these methods through Python implementations, visualizations, and evaluations of their effectiveness.
+
+#### Goals
+- Implement Regex for automated bill generation.
+- Learn and apply multiple Word Embedding techniques:
+  - One Hot Encoding
+  - Bag of Words
+  - TF-IDF
+  - Word2Vec (CBOW and Skip Gram)
+  - FastText
+- Visualize and evaluate embeddings using t-SNE and discuss their performance.
+
+#### Goals
+
+#### Goals
+
 
 ### Lab 4
 #### [`Sentiment Analysis`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_4_Sentiment_Analysis.ipynb).
 
+
+
 ### Lab 5
 #### [`Topic Modeling Using LDA`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Introduction_to_Topic_Modeling.ipynb).
 
+
+
 #### [`Topic Modeling with BERTopic`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Topic_Modeling_with_BERTopic.ipynb).
+
+
 
 #### [`Evaluate Topic Models`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Evaluate_Topic_Models.ipynb).
 
+
+ 
 ### Lab 6
 #### [`Generative AI Use Case: Summarize Dialogue`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_6_summarize_dialogue.ipynb).
-
-
-
-  ```python
-     import pandas as pd
-     df = pd.read_csv('goodreads.csv')
-     df.columns = ["rating", 'review_count', 'isbn', 'booktype', 'author_url', 'year', 'genre_urls', 'dir', 'rating_count', 'name']
-     df.head()
-  ```
 
 
 
