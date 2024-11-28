@@ -13,17 +13,13 @@ This assignment helps you revise the basics of NumPy, focusing on array creation
 - Perform basic operations like sorting, indexing, and reshaping.
 - Use essential NumPy functions.
 
-#### Submission Format
-- **NumPy**: The main library used for array operations.
-- **Python**: The code is written in Python.
+#### Requirements
+- Numpy
 
 To import NumPy, use:
 ```
 import numpy as np
 ```
-
-#### Requirements
-- Numpy
   
 #### Key Concepts Covered
 1. **Array Creation:** **`np.array()`**, **`np.zeros()`**, **`np.ones()`**, etc.
