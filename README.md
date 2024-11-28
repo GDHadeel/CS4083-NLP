@@ -110,14 +110,25 @@ The first step is loading the **`goodreads.csv`** dataset and cleaning it. This 
      df.head()
   ```
 
-
-
-
 ##### Parsing and Completing the Dataframe 
 Extract author names from **`author_url`** and genres from **`genre_urls`** using string operations.
 
+###### Example Code:
+  ```python
+     def get_author(url):
+       return url.split('/')[-1].split('.')[1]
+
+     df['author'] = df.author_url.map(get_author)
+  ```
+
 ##### Grouping
 Group data by author or year and calculate aggregates (e.g., average rating).
+
+###### Example Code:
+  ```python
+     dfgb_author = df.groupby('author')
+     dfgb_author['author'].count()
+  ```
 
 ##### Dataset
 [`goodreads`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/goodreads.csv):
