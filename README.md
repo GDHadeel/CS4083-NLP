@@ -55,25 +55,25 @@ import numpy as np
 - Jupyter Notebook or Python IDE
 
 #### Key Concepts Covered
-1- Creating Pandas Objects:
+1. Creating Pandas Objects:
 **`Series`** and **`DataFrame`** creation.
 
-2- Viewing Data:
+2. Viewing Data:
 **`head()`**, **`tail()`**, **`index`**, **`columns`**, **`to_numpy()`**, etc.
 
-3- Selection:
+3. Selection:
 Selecting by label (**`loc`**), position (**`iloc`**), and boolean indexing.
 
-4- Handling Missing Data:
+4. Handling Missing Data:
 Using **`isna()`**, **`fillna()`**, **`dropna()`**.
 
-5- Basic Operations:
+5. Basic Operations:
 Arithmetic operations, applying functions (**`agg`**, **`transform`**), and string methods.
 
-6- Sorting:
+6. Sorting:
 Sorting data by index and values using **`sort_index()`** and **`sort_values()`**.
 
-7- Aggregating & Transforming Data:
+7. Aggregating & Transforming Data:
 Using aggregation functions (**`mean()`**, **`sum()`**) and transformations.
 
 ---
