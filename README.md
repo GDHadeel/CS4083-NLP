@@ -659,9 +659,9 @@ print("Generated Summary:", summary)
 
 
 ## Acknowledgments
-I would like to thank my instructor, **Dr. Naila Marir**, for her guidance and support throughout this lab.
+I would like to thank my instructor, **Dr. Naila Marir**, for her guidance and support throughout this course.
 
-Special thanks to my friends and teammates, **Shumokh Alhattami**, **Deema Hamidah**, and **Sahar Albardawil**, for their collaboration and valuable contributions.
+Special thanks to my teammates, **Shumokh Alhattami**, **Deema Hamidah**, and **Sahar Albardawil**, for their collaboration and valuable contributions.
 
 
 
