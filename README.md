@@ -275,30 +275,35 @@ t-SNE plots to visualize word embeddings and the semantic relationships between 
 
 
 ### [`Lab 4`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_4_Sentiment_Analysis.ipynb): Sentiment Analysis
-This lab focuses on understanding the difference between data-centric and model-centric approaches in machine learning. It demonstrates how improving the data can lead to better performance than just tuning models and hyperparameters.
+This lab focuses on understanding the difference between data-centric and model-centric to solving machine learning problems. It demonstrates how improving the quality of the data can lead to better performance, even when the model remains unchanged.
+
 #### Goals
-- Build a text classifier for product reviews (magazines).
-- Compare the performance of different models.
-- Investigate the importance of cleaning the data to improve model accuracy.
-- Explore ways to enhance model performance by focusing on data quality.
+- Train a baseline model.
+- Evaluate the model's performance.
+- Identify and address data issues (e.g., HTML tags, incorrect labels).
+- Improve the model performance by cleaning the data.
 
-#### Dataset [`reviews_train`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_train.csv), [`reviews_test`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_test.csv)
-The dataset contains product reviews labeled as either "good" or "bad." Each review has an associated label:
-- Good Review: ⭐️⭐️⭐️⭐️⭐️
-- Bad Review: ⭐️
-- 
-  - Example reviews:
-    - Excellent! I look forward to every issue. I had no idea just how much I didn't know. (Label: ⭐️⭐️⭐️⭐️⭐️)
-    - It took 6 weeks to get delivered, and he was so disappointed when it finally arrived. (Label: ⭐️)
+#### Example Review
 
-#### Installation
-To run this lab, you'll need to install the required libraries. You can install them using the following command:
-  ```
-pip install scikit-learn pandas
-  ```
+- Review: Excellent! I look forward to every issue. I had no idea just how much I didn't know.
+  - Label: ⭐️⭐️⭐️⭐️⭐️ (Good)
+
+- Review: My son waited and waited, it took the 6 weeks to get delivered, but when it got here he was so disappointed.
+  - Label: ⭐️ (Bad)
+
+#### Requirements
+To run the lab, you’ll need the following Python libraries:
+-**`scikit-learn`**
+-**`pandas`**
+
+You can install them using the following command:
+```
+!pip install scikit-learn pandas
+```
+
 #### Steps
 
-###### 1. Loading the Data
+###### 1. Load the Data
 First, load the training and test datasets:
   ```python
      import pandas as pd
@@ -308,12 +313,12 @@ First, load the training and test datasets:
      test.sample(5)
   ```
 
-###### 2. Training a Baseline Model
-We use the TF-IDF representation of the text and train an SVM model with SGD. The following code sets up a simple pipeline:
+###### 2. Train a Baseline Model
+We use a simple pipeline with **`CountVectorizer`**, **`TfidfTransformer`**, and a linear classifier (**`SGDClassifier`**):
   ```python
+from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.linear_model import SGDClassifier
-from sklearn.pipeline import Pipeline
 
 sgd_clf = Pipeline([
     ('vect', CountVectorizer()),
@@ -324,7 +329,7 @@ sgd_clf = Pipeline([
 sgd_clf.fit(train['review'], train['label'])
 ```
 
-###### 3. Evaluating the Model
+###### 3. Evaluate the Model
 After training, evaluate the accuracy of the model:
   ```python
 from sklearn import metrics
@@ -337,40 +342,41 @@ def evaluate(clf):
 evaluate(sgd_clf)
   ```
 
-###### 4. Trying Another Model
-Experiment with different models to improve accuracy. You can try:
+###### 4. Improve the Model
+Try a Different Model: You can experiment with other classifiers, such as Naive Bayes or Random Forests, to see if they perform better.
 
-- Naive Bayes Classifier for comparison.
-- Hyperparameter tuning with grid search.
-- Ensemble methods for combining multiple models.
+- Tune Hyperparameters: Adjust hyperparameters to improve accuracy.
+- Ensemble Methods: Combine multiple models for better performance.
+  -Example of training a Naive Bayes classifier:
+    ```python
+    from sklearn.naive_bayes import MultinomialNB
+
+    NB_clf = Pipeline([
+      ('vect', CountVectorizer()),
+      ('tfidf', TfidfTransformer()),
+      ('clf', MultinomialNB())  
+    ])
+    NB_clf.fit(train['review'], train['label'])
+    evaluate(NB_clf)
+    ```
   
-###### 5. Data Inspection
-Look at the data to identify any issues. For example, you may notice:
+###### 5. Data Cleaning
+On inspection, the data contains some issues, such as HTML tags and incorrect labels. We clean the data by filtering out these noisy examples.
 
-- Mislabeling (e.g., negative reviews labeled as "good").
-- HTML tags or noisy text.
- ```
-train.head()
-```
-
-###### 6. Cleaning the Data
-Clean the data by removing examples with issues, such as HTML tags. Create a simple heuristic to filter out bad data:
-  ```python
+ ```python
 def is_bad_data(review: str) -> bool:
-    # Detect bad data (e.g., containing HTML tags)
-    return False
+    return ('<' in review and '>' in review) or '&' in review
 
 train_clean = train[~train['review'].map(is_bad_data)]
-  ```
-
-###### 7. Re-training on Cleaned Data
-Train a model using the cleaned dataset and evaluate its performance:
-  ```python
+```
+After cleaning the data, retrain the model and evaluate its performance:
+ ```python
 sgd_clf_clean = clone(sgd_clf)
 sgd_clf_clean.fit(train_clean['review'], train_clean['label'])
 evaluate(sgd_clf_clean)
-  ```
+```
 
+#### Dataset [`reviews_train`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_train.csv), [`reviews_test`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_test.csv)
 
 
 #### [`Lab5.A`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Introduction_to_Topic_Modeling.ipynb)
