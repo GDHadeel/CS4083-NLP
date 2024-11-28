@@ -14,8 +14,8 @@ This assignment helps you revise the basics of NumPy, focusing on array creation
 - Use essential NumPy functions.
 
 #### Submission Format
-- **`NumPy`**: The main library used for array operations.
-- **`Python`**: The code is written in Python.
+- **NumPy**: The main library used for array operations.
+- **Python**: The code is written in Python.
 
 To import NumPy, use:
 ```
@@ -34,19 +34,20 @@ import numpy as np
 5. **Array Statistics:** Using **`.sum()`**, **`.min()`**, **`.max()`**, etc.
 
 
-
 #### [`Assignment_1`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/Assignment_1.ipynb): 10 Minutes to Pandas
-This assignment explores common Pandas operations to help learn and understand basic data manipulation techniques.
+This assignment introduces you to basic Pandas operations for data manipulation and analysis.
 
 #### Goal
-The goal is to familiarize you with basic operations in Pandas for handling and analyzing data. This includes creating objects, viewing data, selecting, filtering, and applying operations to Pandas DataFrames and Series.
+- Learn how to create and manipulate Pandas objects (Series and DataFrames).
+- Understand how to select, filter, and apply operations to data.
+
 
 #### Submission Format
 Notebook: **`.ipynb`** format or Python script **`.py`**
 
-To import NumPy, use:
+To import Pandas, use:
 ```
-import numpy as np
+import pandas as pd
 ```
 
 #### Requirements
