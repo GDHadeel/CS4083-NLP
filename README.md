@@ -90,7 +90,7 @@ This lab focuses on data cleaning and exploratory data analysis (EDA) using the 
 - Parse and transform data columns.
 - Group data by specific features and perform aggregation.
 
-#### Loading and Cleaning with Pandas
+#### 1. Loading and Cleaning with Pandas
 The first step is loading the **`goodreads.csv`** dataset and cleaning it. This includes:
 
 - Checking for missing values and handling them (e.g., removing or filling missing data).
@@ -110,7 +110,7 @@ The first step is loading the **`goodreads.csv`** dataset and cleaning it. This 
      df.head()
   ```
 
-##### Parsing and Completing the Dataframe 
+##### 2. Parsing and Completing the Dataframe 
 Extract author names from **`author_url`** and genres from **`genre_urls`** using string operations.
 
 ###### Example Code:
@@ -121,7 +121,7 @@ Extract author names from **`author_url`** and genres from **`genre_urls`** usin
      df['author'] = df.author_url.map(get_author)
   ```
 
-##### Grouping
+##### 3. Grouping
 Group data by author or year and calculate aggregates (e.g., average rating).
 
 ###### Example Code:
@@ -134,8 +134,91 @@ Group data by author or year and calculate aggregates (e.g., average rating).
 [`goodreads`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/goodreads.csv):
 
 
-### Lab 2
-#### [`Text Data Preprocessing (NLP pipline)`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab2NLPpipeline.ipynb).
+
+### [`Lab 2`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Data%20analysis%20with%20pandas.ipynb): Text Data Preprocessing (NLP pipline)
+In this lab, we explore how to preprocess tweets for sentiment analysis using the NLTK package. By the end of the lab, you will understand how to build an NLP pipeline to process and analyze Twitter datasets.
+
+#### Setup
+1. Load and explore a Twitter dataset.
+2. Perform basic text preprocessing tasks.
+3. Use techniques like Bag of Words and TF-IDF to represent text.
+
+#### Goals
+To get started, we will use the NLTK package and the sample Twitter dataset included in it. The dataset consists of 5000 positive and 5000 negative tweets.
+
+To install the necessary libraries, run:
+```
+pip install nltk matplotlib
+```
+#### Import Libraries:
+```
+import nltk
+from nltk.corpus import twitter_samples
+import matplotlib.pyplot as plt
+import random
+```
+
+#### 1. Loading the Twitter Dataset
+The sample dataset includes positive and negative tweets. Use the following code to load the data:
+```
+nltk.download('twitter_samples')
+positive_tweets = twitter_samples.strings('positive_tweets.json')
+negative_tweets = twitter_samples.strings('negative_tweets.json')
+```
+
+#### 2. Preprocessing the Text
+1. Lowercasing text.
+2. Removing stop words, punctuation, and irrelevant content (URLs, hashtags).
+3. Tokenizing the text.
+4. Stemming the words.
+   
+###### Example of how we clean and process a tweet:
+  ```python
+import re
+from nltk.tokenize import TweetTokenizer
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+
+# Example tweet
+tweet = "I love NLP! #excited :) http://example.com"
+
+# Clean tweet
+tweet = re.sub(r'https?:\/\/.*[\r\n]*', '', tweet)  # remove URLs
+tweet = re.sub(r'#', '', tweet)  # remove hashtags
+tokenizer = TweetTokenizer(preserve_case=False, strip_handles=True, reduce_len=True)
+tokens = tokenizer.tokenize(tweet)
+
+# Remove stop words and punctuation
+stop_words = stopwords.words('english')
+tokens_clean = [word for word in tokens if word not in stop_words and word not in string.punctuation]
+
+# Stemming
+stemmer = PorterStemmer()
+tokens_stemmed = [stemmer.stem(word) for word in tokens_clean]
+
+print(tokens_stemmed)
+  ```
+
+
+#### 3. Data Representation (Vectorization)
+We use vectorization to convert text into numerical data. We can use techniques like Bag of Words (BoW) and TF-IDF.
+
+###### Example of Bag of Words:
+  ```python
+     from sklearn.feature_extraction.text import CountVectorizer
+     vectorizer = CountVectorizer()
+     X = vectorizer.fit_transform([tweet])
+     print(vectorizer.get_feature_names_out())
+  ```
+
+###### Example of TF-IDF:
+  ```python
+     from sklearn.feature_extraction.text import TfidfVectorizer
+     tfidf_vectorizer = TfidfVectorizer()
+     tfidf = tfidf_vectorizer.fit_transform([tweet])
+     print(tfidf.toarray())
+  ```
+
 
 ### Lab 3
 #### [`Regex & ArabicNLP Embedding`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab3_Word_Embedding.ipynb).
