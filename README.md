@@ -98,7 +98,17 @@ The first step is loading the **`goodreads.csv`** dataset and cleaning it. This 
 - Parsing columns like **`author_url`** and **`genre_urls`** to extract more useful information.
 
 ##### Cleaning Steps:
+1. Load the dataset into a pandas DataFrame.
+2. Examine and clean the data (handle missing values, correct data types).
+3. Parse relevant columns to extract additional information (e.g., split full author names or genre URLs).
 
+##### Example Code:
+  ```python
+     import pandas as pd
+     df = pd.read_csv('goodreads.csv')
+     df.columns = ["rating", 'review_count', 'isbn', 'booktype', 'author_url', 'year', 'genre_urls', 'dir', 'rating_count', 'name']
+     df.head()
+  ```
 
 
 ### Lab 2
