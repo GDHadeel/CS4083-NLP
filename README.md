@@ -272,6 +272,7 @@ t-SNE plots to visualize word embeddings and the semantic relationships between 
   - Apply and visualize word embeddings using t-SNE.
 4. Evaluate and compare the different word embedding techniques based on their visualizations and effectiveness.
 
+##### Dataset: [`goodreads`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/goodreads.csv), [`goodreads`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/goodreads.csv)
 
 
 ### [`Lab 4`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_4_Sentiment_Analysis.ipynb): Sentiment Analysis
