@@ -379,7 +379,105 @@ evaluate(sgd_clf_clean)
 #### Dataset [`reviews_train`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_train.csv), [`reviews_test`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_test.csv)
 
 
-#### [`Lab5.A`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Introduction_to_Topic_Modeling.ipynb)
+#### [`Lab5.A`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Introduction_to_Topic_Modeling.ipynb): Topic Modeling Using LDA
+In this lab, we implement Topic Modeling using Latent Dirichlet Allocation (LDA) to uncover hidden topics in a collection of text data. We focus on understanding the process of preparing text data for LDA, training the model, and analyzing the results.
+
+#### Goals
+- Understand how LDA works as a generative probabilistic model.
+- Apply LDA for topic modeling on a set of NeurIPS papers.
+- Visualize the topics to interpret and analyze them effectively.
+
+#### Requirements
+- **`pandas`**
+- **`gensim`** for LDA modeling
+- **`nltk`** for stopwords
+- **`pyLDAvis`** for visualization
+- **`wordcloud`** for word cloud generation
+
+- You can install the necessary dependencies by running:
+ ```
+pip install gensim nltk pyLDAvis wordcloud
+```
+
+#### Steps
+
+###### 1. Loading the Data
+The dataset used in this project contains research papers from the NeurIPS (NIPS) conference, spanning from 1987 to 2016. The papers are loaded from a zipped CSV file.
+ ```python
+import zipfile
+import pandas as pd
+
+# Open the zip file and extract the content
+with zipfile.ZipFile("NIPS Papers.zip", "r") as zip_ref:
+    zip_ref.extractall("temp")
+
+# Load the CSV data into a DataFrame
+papers = pd.read_csv("temp/NIPS Papers/papers.csv")
+```
+
+###### 2. Data Cleaning
+We remove unnecessary columns and perform basic preprocessing, like removing punctuation and converting text to lowercase.
+ ```python
+import re
+
+# Remove punctuation and convert text to lowercase
+papers['paper_text_processed'] = papers['paper_text'].map(lambda x: re.sub('[,\.!?]', '', x))
+papers['paper_text_processed'] = papers['paper_text_processed'].map(lambda x: x.lower())
+```
+
+###### 3. Exploratory Data Analysis
+A WordCloud is generated to visualize the most common words in the dataset, ensuring the text is ready for topic modeling.
+```python
+from wordcloud import WordCloud
+
+long_string = ','.join(list(papers['paper_text_processed'].values))
+wordcloud = WordCloud(background_color="white", max_words=1000, contour_width=3, contour_color='steelblue')
+wordcloud.generate(long_string)
+wordcloud.to_image()
+
+```
+
+###### 4. Preparing the Data for LDA
+We tokenize the text and remove stopwords, then prepare the data in a format suitable for training the LDA model.
+```python
+import gensim
+from nltk.corpus import stopwords
+from gensim.utils import simple_preprocess
+
+stop_words = stopwords.words('english')
+
+# Tokenize and remove stopwords
+data_words = list(sent_to_words(papers['paper_text_processed'].values.tolist()))
+data_words = remove_stopwords(data_words)
+```
+
+###### 5. Training the LDA Model
+The LDA model is built using **`gensim`**'s **`LdaMulticore`**, specifying the number of topics to extract from the dataset. For this tutorial, we use 10 topics.
+```python
+import gensim.corpora as corpora
+from pprint import pprint
+
+# Create a Dictionary and Corpus
+id2word = corpora.Dictionary(data_words)
+corpus = [id2word.doc2bow(text) for text in data_words]
+
+# Build the LDA model
+lda_model = gensim.models.LdaMulticore(corpus=corpus, id2word=id2word, num_topics=10)
+
+# Print the topics discovered by LDA
+pprint(lda_model.print_topics())
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
