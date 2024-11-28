@@ -261,6 +261,9 @@ pip install scikit-learn
   - **Word2Vec (Skip Gram):** Predicts surrounding words based on a target word.
   - **FastText:** Represents each word as a bag of character n-grams for better handling of out-of-vocabulary words.
 
+#### Visualizations
+t-SNE plots to visualize word embeddings and the semantic relationships between words.
+
 #### How to Use
 1. Download the **`word.pkl`** file containing the Arabic words dataset.
 2. Download the pre-trained models for Word2Vec and FastText.
@@ -271,13 +274,12 @@ pip install scikit-learn
 
 
 
-### Lab 4
-#### [`Sentiment Analysis`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_4_Sentiment_Analysis.ipynb).
+### [`Lab 4`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_4_Sentiment_Analysis.ipynb): Sentiment Analysis
 
 
 
 ### Lab 5
-#### [`Topic Modeling Using LDA`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Introduction_to_Topic_Modeling.ipynb).
+#### [`Topic Modeling Using LDA`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Introduction_to_Topic_Modeling.ipynb)
 
 
 
