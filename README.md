@@ -224,7 +224,7 @@ This lab introduces Natural Language Processing (NLP) techniques, including Rege
 
 #### Goals
 - Implement Regex for automated bill generation.
-- Learn and apply multiple Word Embedding techniques:
+- Learn and apply multiple **Word Embedding techniques**:
   - One Hot Encoding
   - Bag of Words
   - TF-IDF
@@ -232,9 +232,43 @@ This lab introduces Natural Language Processing (NLP) techniques, including Rege
   - FastText
 - Visualize and evaluate embeddings using t-SNE and discuss their performance.
 
-#### Goals
+#### Pre-requisites
 
-#### Goals
+1. Install required libraries:
+ ```
+pip install fasttext
+pip install gensim
+pip install scikit-learn
+ ```
+2. Download pre-trained models for **Word2Vec (CBOW)**, **Word2Vec (Skip Gram)**, and FastText from the following links and place them in the same directory as the notebook:
+
+- Word2Vec CBOW: [`Download`](https://github.com/mmdoha200/ArWordVec)
+- Word2Vec Skip Gram: [`Download`](https://github.com/mmdoha200/ArWordVec)
+- FastText: [`Download`](https://blackboard.effatuniversity.edu.sa/ultra/courses/_21032_1/cl/outline)
+
+##### Part 1: Rule-Based NLP with Regex
+- Objective: Implement Regex to parse a given text and extract product names, quantities, and prices for bill generation.
+- Example:
+  - Input: "I bought three Samsung smartphones at $150 each, four kilos of fresh bananas for $1.2 a kilogram..."
+  - Output: A table displaying the product, quantity, unit price, and total price.
+
+##### Part 2: Word Embedding Techniques
+- **Objective:** Explore and visualize different word embedding methods.
+  - **One Hot Encoding:** Each word is represented by a vector with a single '1' indicating the presence of the word.
+  - **Bag of Words:** Counts word frequencies without considering grammar or order.
+  - **TF-IDF:** Evaluates the importance of a word in a document relative to a corpus.
+  - **Word2Vec (CBOW):** Predicts words based on surrounding context words.
+  - **Word2Vec (Skip Gram):** Predicts surrounding words based on a target word.
+  - **FastText:** Represents each word as a bag of character n-grams for better handling of out-of-vocabulary words.
+
+#### How to Use
+1. Download the **`word.pkl`** file containing the Arabic words dataset.
+2. Download the pre-trained models for Word2Vec and FastText.
+3. Run the Jupyter notebook. The code will:
+  - Generate a bill from a sample shopping description using Regex.
+  - Apply and visualize word embeddings using t-SNE.
+4. Evaluate and compare the different word embedding techniques based on their visualizations and effectiveness.
+
 
 
 ### Lab 4
