@@ -97,10 +97,21 @@ The first step is loading the **`goodreads.csv`** dataset and cleaning it. This 
 - Ensuring each column has the correct data type.
 - Parsing columns like **`author_url`** and **`genre_urls`** to extract more useful information.
 
-##### Cleaning Steps:
+###### Cleaning Steps:
 1. Load the dataset into a pandas DataFrame.
 2. Examine and clean the data (handle missing values, correct data types).
 3. Parse relevant columns to extract additional information (e.g., split full author names or genre URLs).
+
+###### Example Code:
+  ```python
+     import pandas as pd
+     df = pd.read_csv('goodreads.csv')
+     df.columns = ["rating", 'review_count', 'isbn', 'booktype', 'author_url', 'year', 'genre_urls', 'dir', 'rating_count', 'name']
+     df.head()
+  ```
+
+
+
 
 ##### Parsing and Completing the Dataframe 
 Extract author names from **`author_url`** and genres from **`genre_urls`** using string operations.
@@ -109,7 +120,7 @@ Extract author names from **`author_url`** and genres from **`genre_urls`** usin
 Group data by author or year and calculate aggregates (e.g., average rating).
 
 ##### Dataset
-The original dataset (goodreads.csv) and the cleaned dataset (cleaned-goodreads.csv) are available for download:
+[`goodreads`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/goodreads.csv):
 
 
 ### Lab 2
