@@ -73,7 +73,7 @@ Using aggregation functions (**`mean()`**, **`sum()`**) and transformations.
 ---
 ## B- Labs
 ---
-### [`Lab 1`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Data%20analysis%20with%20pandas.ipynb): Data Analysis with Pandas
+## [`Lab 1`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Data%20analysis%20with%20pandas.ipynb): Data Analysis with Pandas
 This lab focuses on data cleaning and exploratory data analysis (EDA) using the pandas library. The dataset contains information about approximately 6,000 books from Goodreads, including details like book ratings, review counts, and genres. The objective is to clean the data, parse and transform it, and perform basic EDA.
 
 #### Goals
@@ -126,7 +126,7 @@ Group data by author or year and calculate aggregates (e.g., average rating).
 #### Dataset: [`goodreads`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/goodreads.csv)
 
 ---
-### [`Lab 2`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Data%20analysis%20with%20pandas.ipynb): Text Data Preprocessing (NLP pipline)
+## [`Lab 2`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Data%20analysis%20with%20pandas.ipynb): Text Data Preprocessing (NLP pipline)
 In this lab, we explore how to preprocess tweets for sentiment analysis using the NLTK package. By the end of the lab, you will understand how to build an NLP pipeline to process and analyze Twitter datasets.
 
 #### Goals 
@@ -211,7 +211,7 @@ We use vectorization to convert text into numerical data. We can use techniques 
 
 
 ---
-### [`Lab 3`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab3_Word_Embedding.ipynb): Regex & ArabicNLP Embedding
+## [`Lab 3`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab3_Word_Embedding.ipynb): Regex & ArabicNLP Embedding
 This lab introduces Natural Language Processing (NLP) techniques, including Regex for text processing and various Word Embedding methods. Students will explore these methods through Python implementations, visualizations, and evaluations of their effectiveness.
 
 #### Goals
@@ -266,7 +266,7 @@ t-SNE plots to visualize word embeddings and the semantic relationships between 
 
 
 ---
-### [`Lab 4`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_4_Sentiment_Analysis.ipynb): Sentiment Analysis
+## [`Lab 4`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_4_Sentiment_Analysis.ipynb): Sentiment Analysis
 This lab focuses on understanding the difference between data-centric and model-centric to solving machine learning problems. It demonstrates how improving the quality of the data can lead to better performance, even when the model remains unchanged.
 
 #### Goals
@@ -371,7 +371,7 @@ evaluate(sgd_clf_clean)
 #### Dataset [`reviews_train`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_train.csv), [`reviews_test`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_test.csv)
 
 ---
-#### [`Lab5.A`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Introduction_to_Topic_Modeling.ipynb): Topic Modeling Using LDA
+## [`Lab5.A`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Introduction_to_Topic_Modeling.ipynb): Topic Modeling Using LDA
 In this lab, we implement Topic Modeling using Latent Dirichlet Allocation (LDA) to uncover hidden topics in a collection of text data. We focus on understanding the process of preparing text data for LDA, training the model, and analyzing the results.
 
 #### Goals
@@ -460,7 +460,7 @@ lda_model = gensim.models.LdaMulticore(corpus=corpus, id2word=id2word, num_topic
 pprint(lda_model.print_topics())
 ```
 ---
-#### [`Lab5.B`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Topic_Modeling_with_BERTopic.ipynb): Topic Modeling with BERTopic
+## [`Lab5.B`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Topic_Modeling_with_BERTopic.ipynb): Topic Modeling with BERTopic
 
 In this lab, we explore BERTopic, a deep learning-based approach for topic modeling. Topic modeling is the process of discovering themes within a large collection of text documents, similar to organizing a bookstore by book topics. The BERTopic model uses BERT embeddings, clustering, and TF-IDF to find and represent topics in text data.
 
@@ -503,7 +503,7 @@ Libraries: **`bertopic`**, **`sentence-transformers`**, **`umap`**, **`hdbscan`*
 
 
 ---
-#### [`Lab5.C`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Evaluate_Topic_Models.ipynb): Evaluate Topic Models
+## [`Lab5.C`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Evaluate_Topic_Models.ipynb): Evaluate Topic Models
 In this lab, we explore Latent Dirichlet Allocation (LDA) for topic modeling using Python and Gensim. The main objective is to evaluate topic models through topic coherence and optimize LDA parameters. We use a dataset of NeurIPS (NIPS) conference papers published from 1987 to 2016.
 
 #### Goals
@@ -588,7 +588,7 @@ print(f'Coherence Score: {coherence_lda}')
 ```
 
 ---
-#### [`Lab 6`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_6_summarize_dialogue.ipynb): Generative AI Use Case: Summarize Dialogue
+## [`Lab 6`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_6_summarize_dialogue.ipynb): Generative AI Use Case: Summarize Dialogue
 In this lab, we will explore the use of generative AI for the task of dialogue summarization. We will examine how different types of prompt engineering (zero-shot, one-shot, and few-shot) can influence the output of a pre-trained Large Language Model (LLM), FLAN-T5. 
 
 #### Goals
