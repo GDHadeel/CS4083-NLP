@@ -4,10 +4,10 @@
 This repository contains assignments and labs for the CS4083 - Text Mining and NLP course.
 
 ## A- Assignments
-
+---
 ### [`Assignment_0`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/assignment_0.ipynb): NumPy Basics
 This assignment helps you revise the basics of NumPy, focusing on array creation, manipulation, and basic operations.
-
+---
 #### Goals
 - Create and manipulate arrays.
 - Perform basic operations like sorting, indexing, and reshaping.
@@ -33,10 +33,10 @@ import numpy as np
 4. **Random Numbers:** Generating random arrays using **`np.random`**.
 5. **Array Statistics:** Using **`.sum()`**, **`.min()`**, **`.max()`**, etc.
 
-
+---
 ### [`Assignment_1`](https://github.com/GDHadeel/CS4083-NLP/blob/main/assignments/Assignment_1.ipynb): 10 Minutes to Pandas
 This assignment introduces you to basic Pandas operations for data manipulation and analysis.
-
+---
 #### Goals
 - Learn how to create and manipulate Pandas objects (Series and DataFrames).
 - Understand how to select, filter, and apply operations to data.
