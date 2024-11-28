@@ -81,7 +81,9 @@ This lab focuses on data cleaning and exploratory data analysis (EDA) using the 
 - Parse and transform data columns.
 - Group data by specific features and perform aggregation.
 
-#### 1. Loading and Cleaning with Pandas
+#### Steps
+
+##### 1. Loading and Cleaning with Pandas
 The first step is loading the **`goodreads.csv`** dataset and cleaning it. This includes:
 
 - Checking for missing values and handling them (e.g., removing or filling missing data).
