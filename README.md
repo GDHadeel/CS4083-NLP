@@ -23,7 +23,6 @@ import numpy as np
 ```
 
 #### Requirements
-- Python 3.x
 - Numpy
   
 #### Key Concepts Covered
@@ -79,9 +78,8 @@ Sorting data by index and values using **`sort_index()`** and **`sort_values()`*
 Using aggregation functions (**`mean()`**, **`sum()`**) and transformations.
 
 ---
----
 ## B- Labs
-
+---
 ### [`Lab 1`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Data%20analysis%20with%20pandas.ipynb): Data Analysis with Pandas
 This lab focuses on data cleaning and exploratory data analysis (EDA) using the pandas library. The dataset contains information about approximately 6,000 books from Goodreads, including details like book ratings, review counts, and genres. The objective is to clean the data, parse and transform it, and perform basic EDA.
 
@@ -133,7 +131,7 @@ Group data by author or year and calculate aggregates (e.g., average rating).
 ##### Dataset: [`goodreads`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/goodreads.csv)
 
 
-
+---
 ### [`Lab 2`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Data%20analysis%20with%20pandas.ipynb): Text Data Preprocessing (NLP pipline)
 In this lab, we explore how to preprocess tweets for sentiment analysis using the NLTK package. By the end of the lab, you will understand how to build an NLP pipeline to process and analyze Twitter datasets.
 
@@ -218,7 +216,7 @@ We use vectorization to convert text into numerical data. We can use techniques 
   ```
 
 
-
+---
 ### [`Lab 3`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab3_Word_Embedding.ipynb): Regex & ArabicNLP Embedding
 This lab introduces Natural Language Processing (NLP) techniques, including Regex for text processing and various Word Embedding methods. Students will explore these methods through Python implementations, visualizations, and evaluations of their effectiveness.
 
@@ -273,7 +271,7 @@ t-SNE plots to visualize word embeddings and the semantic relationships between 
 4. Evaluate and compare the different word embedding techniques based on their visualizations and effectiveness.
 
 
-
+---
 ### [`Lab 4`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_4_Sentiment_Analysis.ipynb): Sentiment Analysis
 This lab focuses on understanding the difference between data-centric and model-centric to solving machine learning problems. It demonstrates how improving the quality of the data can lead to better performance, even when the model remains unchanged.
 
@@ -378,7 +376,7 @@ evaluate(sgd_clf_clean)
 
 #### Dataset [`reviews_train`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_train.csv), [`reviews_test`](https://github.com/GDHadeel/CS4083-NLP/blob/main/dataset/reviews_test.csv)
 
-
+---
 #### [`Lab5.A`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Introduction_to_Topic_Modeling.ipynb): Topic Modeling Using LDA
 In this lab, we implement Topic Modeling using Latent Dirichlet Allocation (LDA) to uncover hidden topics in a collection of text data. We focus on understanding the process of preparing text data for LDA, training the model, and analyzing the results.
 
@@ -467,7 +465,7 @@ lda_model = gensim.models.LdaMulticore(corpus=corpus, id2word=id2word, num_topic
 # Print the topics discovered by LDA
 pprint(lda_model.print_topics())
 ```
-
+---
 #### [`Lab5.B`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Topic_Modeling_with_BERTopic.ipynb): Topic Modeling with BERTopic
 
 In this lab, we explore BERTopic, a deep learning-based approach for topic modeling. Topic modeling is the process of discovering themes within a large collection of text documents, similar to organizing a bookstore by book topics. The BERTopic model uses BERT embeddings, clustering, and TF-IDF to find and represent topics in text data.
@@ -510,7 +508,7 @@ pip install bertopic
 Libraries: **`bertopic`**, **`sentence-transformers`**, **`umap`**, **`hdbscan`**, **`nltk`**, **`pandas`**, **`gensim`**, **`sklearn`**, etc.
 
 
-
+---
 #### [`Lab5.C`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab5_Evaluate_Topic_Models.ipynb): Evaluate Topic Models
 In this lab, we explore Latent Dirichlet Allocation (LDA) for topic modeling using Python and Gensim. The main objective is to evaluate topic models through topic coherence and optimize LDA parameters. We use a dataset of NeurIPS (NIPS) conference papers published from 1987 to 2016.
 
@@ -596,12 +594,74 @@ print(f'Coherence Score: {coherence_lda}')
 ```
 
 ---
-#### [`Lab 6`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_6_summarize_dialogue.ipynb): 
+#### [`Lab 6`](https://github.com/GDHadeel/CS4083-NLP/blob/main/Labs/Lab_6_summarize_dialogue.ipynb): Generative AI Use Case: Summarize Dialogue
+In this lab, we will explore the use of generative AI for the task of dialogue summarization. We will examine how different types of prompt engineering (zero-shot, one-shot, and few-shot) can influence the output of a pre-trained Large Language Model (LLM), FLAN-T5. 
 
+#### Goals
+- Summarize dialogues using a generative AI model.
+- Explore different inference types: zero-shot, one-shot, and few-shot.
+- Learn prompt engineering techniques to improve the output of the model.
 
+#### Lab Breakdown
+1. **Set up Kernel and Dependencies**
+Install required libraries such as PyTorch and Hugging Face transformers.
 
+2. **Summarize Dialogue without Prompt Engineering**
+Use FLAN-T5 to summarize dialogues from the DialogSum dataset without any specific instruction.
 
+3. **Summarize Dialogue with an Instruction Prompt**
+Explore zero-shot inference by providing the model with a task-specific prompt to guide its summarization.
 
+4. **Summarize Dialogue with One-Shot and Few-Shot Inference**
+Provide one or more example dialogue-summary pairs to the model and compare the results.
+
+5. **Generative Configuration Parameters**
+Adjust the model’s generation parameters to control the output style and quality.
+
+#### Code Setup
+To run the lab, you’ll need to install the following dependencies:
+```
+# Install PyTorch
+pip install --upgrade pip
+pip install --disable-pip-version-check torch==1.13.1 torchdata==0.5.1 --quiet
+
+# Install Hugging Face libraries
+pip install transformers==4.27.2 datasets==2.11.0 --quiet
+```
+
+#### Dataset
+The dataset used in this lab is the **`DialogSum`** dataset, which contains 10,000+ dialogues along with manually labeled summaries.
+```python
+from datasets import load_dataset
+dataset = load_dataset("knkarthick/dialogsum")
+```
+
+#### Example
+how to use the FLAN-T5 model to summarize a dialogue:
+```python
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+# Load the model and tokenizer
+model_name = 'google/flan-t5-base'
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
+
+# Example dialogue
+dialogue = "Person A: Hello, how are you? Person B: I'm good, thanks! How about you?"
+prompt = f"Summarize the following conversation.\n\n{dialogue}\n\nSummary:"
+
+# Tokenize the input
+inputs = tokenizer(prompt, return_tensors='pt')
+
+# Generate the summary
+summary = tokenizer.decode(model.generate(inputs["input_ids"], max_new_tokens=50)[0], skip_special_tokens=True)
+print("Generated Summary:", summary)
+```
+
+#### Prompt Engineering Examples
+1. **Zero-Shot Inference:** Provide a direct instruction to summarize the dialogue.
+2. **One-Shot Inference:** Provide one example dialogue-summary pair to guide the model.
+3. **Few-Shot Inference:** Provide multiple examples to further enhance the model's understanding of the task.
 
 
 
