@@ -658,4 +658,13 @@ print("Generated Summary:", summary)
 3. **Few-Shot Inference:** Provide multiple examples to further enhance the model's understanding of the task.
 
 
+## Acknowledgments
+I would like to thank my instructor, **Dr. Naila Marir**, for her guidance and support throughout this lab.
+
+Special thanks to my friends and teammates, **Shumokh Alhattami**, **Deema Hamidah**, and **Sahar Albardawil**, for their collaboration and valuable contributions.
+
+
+
+
+
 
