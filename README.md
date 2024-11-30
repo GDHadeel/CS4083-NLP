@@ -556,7 +556,7 @@ data_words = list(sent_to_words(papers['paper_text_processed'].values.tolist()))
 bigram = gensim.models.Phrases(data_words, min_count=5, threshold=100)
 bigram_mod = gensim.models.phrases.Phraser(bigram)
 ```
-
+ 
 #### Running the Model
 Once you've preprocessed the data, you can train the LDA model using Gensim:
 ```python
